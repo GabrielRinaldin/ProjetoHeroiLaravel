@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Heroi;
 use App\Models\Identidade;
+use ErrorException;
+use Exception;
+use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
@@ -17,13 +20,10 @@ class IdentidadesController extends Controller
      */
     public function index($id)
     { 
-        $heroi = Heroi::find($id);
-        $identidade = $heroi->identidade->all();
-        return view('identidades.index',  
-        [
-        'identidades' => $identidade,
-        ]);
-        
+            $identidade = Identidade::all();
+            $heroi = Heroi::find($id);
+    
+            return view('identidades.index', ['identidade' => $identidade, 'heroi' => $heroi]);
     }
 
 
