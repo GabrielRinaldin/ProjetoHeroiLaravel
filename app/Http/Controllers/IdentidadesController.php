@@ -30,9 +30,7 @@ class IdentidadesController extends Controller
     public function new($id)
     {
         $heroi = Heroi::find($id);
-        return view('identidades.createIdentity', [
-            'heroi' => $heroi,
-            ]);
+        return view('identidades.createIdentity', ['heroi' => $heroi]);
     }
 
     /**

@@ -2,24 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Arma;
-use App\Models\Heroi;
+use App\Models\Batalha;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\Session;
 
-class ArmasController extends Controller
+class BatalhaController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($id)
-    {    $arma = Arma::all();
-        $heroi = Heroi::find($id);
-
-        return view('armas.index', ['arma' => $arma, 'heroi' => $heroi]);
+    public function index()
+    {
+        //
     }
 
     /**
@@ -27,18 +22,9 @@ class ArmasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
-     public function new($id)
-     {
-         $heroi = Heroi::find($id);
-         return view('armas.createArma', ['heroi' => $heroi]);
-     }
-    public function create(Request $request, $heroi)
+    public function create()
     {
-        $arma = new Arma();
-        $arma = $arma->create($request->all());
-        Session::flash('mensagem_sucesso', 'Uma nova identidade foi atribuidada ao seu heroi!!!');
-        return Redirect::to('heroi/arma/'.$heroi);
+        //
     }
 
     /**
@@ -55,10 +41,10 @@ class ArmasController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Arma  $arma
+     * @param  \App\Models\Batalha  $batalha
      * @return \Illuminate\Http\Response
      */
-    public function show(Arma $arma)
+    public function show(Batalha $batalha)
     {
         //
     }
@@ -66,10 +52,10 @@ class ArmasController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Arma  $arma
+     * @param  \App\Models\Batalha  $batalha
      * @return \Illuminate\Http\Response
      */
-    public function edit(Arma $arma)
+    public function edit(Batalha $batalha)
     {
         //
     }
@@ -78,10 +64,10 @@ class ArmasController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Arma  $arma
+     * @param  \App\Models\Batalha  $batalha
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Arma $arma)
+    public function update(Request $request, Batalha $batalha)
     {
         //
     }
@@ -89,10 +75,10 @@ class ArmasController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Arma  $arma
+     * @param  \App\Models\Batalha  $batalha
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Arma $arma)
+    public function destroy(Batalha $batalha)
     {
         //
     }

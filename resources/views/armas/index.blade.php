@@ -6,7 +6,7 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">{{ __('Os herois mais fortes da terra') }}                     
-                        <button class="float-right"><a href="">De uma arma ao seu heroi</a></button>
+                    <button class="float-right"><a href="{{route ('newArma', $heroi->id)}}">De uma arma ao seu heroi</a></button>
                     </div> 
                         <table disable="true">
                             <thead>
@@ -15,10 +15,15 @@
                                 </tr>
                             </thead>
                             
-                            <tbody>                            
+                            <tbody>  
+                                @foreach ($heroi->armas as $arma)
                                 <tr>
-                                    <td>Nada Cadastrado</td>             
-                                </tr> 
+                                    <td>{{$arma->name}}</td>             
+                                    </tr> 
+                                @endforeach
+                              
+                                               
+                                
                             </tbody>
                         </table>   
                 </div>                    

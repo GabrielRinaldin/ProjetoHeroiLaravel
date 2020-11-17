@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateArmasTable extends Migration
+class CreateBatalhasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,14 @@ class CreateArmasTable extends Migration
      */
     public function up()
     {
-        Schema::create('armas', function (Blueprint $table) {
+        Schema::create('batalhas', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->unsignedInteger('heroi_id');
-            
-            $table->timestamps();
-            $table->softDeletes();
+            $table->string('batalha');
+            $table->string('descricao');
+            $table->date('datainicio');
+            $table->date('datafim');
 
-            $table->foreign('heroi_id')->references('id')->on('herois');
+            $table->timestamps();
         });
     }
 
@@ -32,6 +31,6 @@ class CreateArmasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('armas');
+        Schema::dropIfExists('batalhas');
     }
 }
