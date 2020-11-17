@@ -27,4 +27,9 @@ class Heroi extends Model
      {
         return $this->hasOne(Identidade::class);
      }
+
+     public function armas()
+     {
+        return $this->hasMany(Arma::class);
+     }
 }

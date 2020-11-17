@@ -12,12 +12,7 @@ class Identidade extends Model
     use HasFactory, SoftDeletes, Notifiable;
     
      protected $table = 'identidades';
-     protected $fillable =
-     [
-        'identity',
-        'image',
-        'heroi_id',
-     ];
+     protected $fillable = ['identity', 'image', 'heroi_id',];
 
      public function heroi()
      {

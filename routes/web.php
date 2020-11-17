@@ -39,7 +39,9 @@ Route::group(['middleware' => 'web'], function()
     Route::post('heroi/identity/{heroi}/create', ['uses' => 'identidade.create', 'uses' => 'App\Http\Controllers\IdentidadesController@create'])->name('createIdentity');
     
     /** Rota para crud de ARMAS */
-    Route::get('heroi/armas', ['uses' => 'arma.index', 'uses' => 'App\Http\Controllers\ArmasController@index'])->name('arma');
+    Route::get('heroi/arma/{heroi}', ['uses' => 'arma.index', 'uses' => 'App\Http\Controllers\ArmasController@index'])->name('arma');
+    Route::get('heroi/arma/{heroi}/create', ['uses' => 'arma.new', 'uses' => 'App\Http\Controllers\ArmasController@new'])->name('newArma');
+    Route::post('heroi/arma/{heroi}/create', ['uses' => 'arma.create', 'uses' => 'App\Http\Controllers\ArmasController@create'])->name('createArma');
     /** */
 
 });
