@@ -42,11 +42,14 @@
                                 <td>{{$heroi->weigth}}</td>
                                 <td>{{$heroi->status}}</td>
                                 <td>
-                                <button class="float-right"><a href="{{route('edit', $heroi->id)}}">Editar integrante</a></button>
-                                </td>
-                                <td>
                                     <button class="float-right"><a href="{{route('identity', $heroi->id )}}">Identidade Secreta</a></button>
                                  </td>
+                                 <td>
+                                    <button class="float-right"><a href="{{route('arma')}}">Arsenal de Guerra</a></button>
+                                 </td>
+                                <td>
+                                <button class="float-right"><a href="{{route('edit', $heroi->id)}}">Editar integrante</a></button>
+                                </td>
                                 <td>
                                 <button class="float-right"><a href="{{route('delete', $heroi->id)}}">Expulsar do grupo</a></button>
                                 </td>

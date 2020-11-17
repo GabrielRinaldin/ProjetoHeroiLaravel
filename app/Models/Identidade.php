@@ -21,6 +21,6 @@ class Identidade extends Model
 
      public function heroi()
      {
-        return $this->hasOne(Heroi::class, 'heroi_id');
+        return $this->belongsTo(Heroi::class, 'heroi_id' , 'id');
      }
 }
