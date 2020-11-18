@@ -44,5 +44,17 @@ Route::group(['middleware' => 'web'], function()
     Route::post('heroi/arma/{heroi}/create', ['uses' => 'arma.create', 'uses' => 'App\Http\Controllers\ArmasController@create'])->name('createArma');
     /** */
 
+    /** Rota para crud batalha */
+    Route::get('batalha', ['uses' => 'batalha.index', 'uses' => 'App\Http\Controllers\BatalhasController@index'])->name('batalha');
+    Route::get('batalha/create', ['uses' => 'batalha.new', 'uses' => 'App\Http\Controllers\BatalhasController@new'])->name('newBatalha');
+    Route::post('batalha/create', ['uses' => 'batalha.create', 'uses' => 'App\Http\Controllers\BatalhasController@create'])->name('createBatalha');
+    /** */
+
+    /**Rota para crud HeroiBatalha */
+    Route::get('batalha/{batalha}/heroi', ['uses' => 'heroibatalha.new', 'uses' => 'App\Http\Controllers\HeroisBatalhaController@index'])->name('batalheroi');
+    Route::get('batalha/{batalha}/heroi/create', ['uses' => 'HeroiBatalha.new', 'uses' => 'App\Http\Controllers\HeroisBatalhaController@new'])->name('newHeroiBatalha');
+    Route::post('batalha/{batalha}/heroi/create', ['uses' => 'HeroiBatalha.create', 'uses' => 'App\Http\Controllers\HeroisBatalhaController@create'])->name('createHeroiBatalha');
+    /** */
+
 });
 

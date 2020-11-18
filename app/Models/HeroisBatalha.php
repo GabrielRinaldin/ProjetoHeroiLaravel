@@ -7,17 +7,19 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
 
-class Batalha extends Model
+class HeroisBatalha extends Model
 {
     use HasFactory, SoftDeletes, Notifiable;
 
-    protected $table = 'batalhas';
-
-    protected $fillable = ['batalha', 'descricao', 'datainicio', 'datafim'];
+    protected $table = 'herois_batalhas';
+    protected $fillable = ['heroi_id', 'batalha_id'];
 
     public function heroi()
     {
-     return $this->hasMany(Heroi::class);
-
+        return $this->hasMany(Heroi::class, 'heroi_id', 'id');
+    }
+    public function batalha()
+    {
+        return $this->hasMany(Batalha::class, 'batalha_id', 'id');
     }
 }
