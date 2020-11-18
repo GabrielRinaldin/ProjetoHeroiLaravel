@@ -32,4 +32,11 @@ class Heroi extends Model
      {
         return $this->hasMany(Arma::class);
      }
+
+     public function batalha()
+     {
+      return $this->hasMany(Batalha::class);
+
+     }
+     
 }

@@ -15,9 +15,12 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/meucss.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -34,7 +37,10 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         @if(!Auth::guest())
-                        <a class="nav-link" href="{{ route('heroi') }}">{{ __('Herois') }}</a>
+                        
+                        <a class="nav-link" href="{{ route('heroi') }}"><i class="fa fa-users"></i>{{ __('Herois') }}</a>
+                        
+                        <a class="nav-link" href="{{ route('batalha') }}"> <i class="fa fa-users"></i>{{ __('Batalhas') }}</a>
                     @endif
                     </ul>
 

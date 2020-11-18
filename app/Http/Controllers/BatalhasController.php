@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Batalha;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 
-class BatalhaController extends Controller
+class BatalhasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +16,8 @@ class BatalhaController extends Controller
      */
     public function index()
     {
-        //
+        $batalhas = Batalha::all();
+        return view('batalhas.index', ['batalhas' => $batalhas]);
     }
 
     /**
@@ -22,9 +25,19 @@ class BatalhaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+
+     public function new()
     {
-        //
+        return view('batalhas.createBatalha');
+    }
+    public function create(Request $request)
+    {
+        $batalha = new Batalha();
+        $batalha = $batalha->create($request->all());
+        Session::flash('mensagem_sucesso', 'Uma nova batalha foi inserida nos registros!!!');
+        return Redirect::to('batalha');
+
+
     }
 
     /**
