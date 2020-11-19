@@ -32,12 +32,12 @@
                                     </thead>
         
                                     <tbody>
-                                        @foreach($heroibatalhas as $heroibatalha)
+                                    @foreach($heroisbatalha as $heroibatalha)
                                         <tr>
-                                           <th>#{{$heroibatalha->id}}</th>
+                                            <th>{{$heroibatalha->batalha->batalha}}</th>
+                                            <th>{{$heroibatalha->heroi->name}}</th>
                                         </tr> 
                                         @endforeach
-                                        
                                     </tbody>
                                 </table>
                             </div>

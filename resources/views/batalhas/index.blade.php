@@ -45,15 +45,6 @@
                                             <td>
                                             <a href="{{route('batalheroi', $batalha->id)}}" ><button class="float-right btn btn-outline-dark"><i class="fa fa-users fa-lg"></i></button></a>
                                             </td>
-                                            <td>
-                                                <a href=""><button class="float-right btn btn-outline-primary"><i class="fa fa-cogs fa-lg"></i></button></a>
-                                            </td>
-                                            <td>    
-                                                <a href=""><button class="float-right btn btn-outline-secondary"><i class="fa fa-edit fa-lg"></i></button></a>
-                                            </td>
-                                            <td>    
-                                                <a href=""><button class="float-right btn btn-outline-danger"><i class="fa fa-bomb fa-lg"></i></button></a>
-                                            </td>
                                         </tr>
                                         @endforeach
                                          

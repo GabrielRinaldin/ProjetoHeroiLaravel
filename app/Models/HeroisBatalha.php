@@ -16,10 +16,11 @@ class HeroisBatalha extends Model
 
     public function heroi()
     {
-        return $this->hasMany(Heroi::class, 'heroi_id', 'id');
+        return $this->belongsTo(Heroi::class);
     }
+
     public function batalha()
     {
-        return $this->hasMany(Batalha::class, 'batalha_id', 'id');
+        return $this->belongsTo(Batalha::class);
     }
 }
