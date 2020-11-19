@@ -19,8 +19,13 @@ class HeroisBatalhaController extends Controller
     public function index($id)
     {   
         $batalha = Batalha::find($id);
-        $heroibatalhas = HeroisBatalha::all();
-        return view('batalhas.batalhaheroi.index', ['batalha' => $batalha, 'heroibatalhas' => $heroibatalhas]);
+        $heroi = Heroi::find($id);
+        $heroisbatalha = HeroisBatalha::with('heroi', 'batalha')->get();
+
+        return view('batalhas.batalhaheroi.index', 
+        [   'batalha' => $batalha,
+            'heroi' => $heroi,            
+            'heroisbatalha' => $heroisbatalha]);
     }
 
     /**

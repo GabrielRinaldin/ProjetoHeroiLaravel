@@ -15,9 +15,8 @@ class Batalha extends Model
 
     protected $fillable = ['batalha', 'descricao', 'datainicio', 'datafim'];
 
-    public function heroi()
+    public function heroisbatalha()
     {
-     return $this->hasMany(Heroi::class);
-
+     return $this->hasMany(HeroisBatalha::class);
     }
 }
