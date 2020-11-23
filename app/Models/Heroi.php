@@ -37,5 +37,5 @@ class Heroi extends Model
      {
       return $this->hasMany(HeroisBatalha::class);
      }
-     
+
 }

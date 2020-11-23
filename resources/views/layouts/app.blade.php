@@ -41,6 +41,8 @@
                         <a class="nav-link" href="{{ route('heroi') }}"><i class="fa fa-users"></i>{{ __('Herois') }}</a>
                         
                         <a class="nav-link" href="{{ route('batalha') }}"> <i class="fa fa-users"></i>{{ __('Batalhas') }}</a>
+                       
+                        <a class="nav-link" href="{{ route('vilao') }}"> <i class="fa fa-users"></i>{{ __('Viloes') }}</a>
                     @endif
                     </ul>
 
@@ -87,5 +89,8 @@
             @yield('content')
         </main>
     </div>
+
+    <footer>
+    </footer>
 </body>
 </html>
