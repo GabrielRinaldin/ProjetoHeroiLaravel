@@ -32,7 +32,7 @@
                                     </thead>
         
                                     <tbody>
-                                    @foreach($heroisbatalha as $heroibatalha)
+                                    @foreach($batalha->heroisbatalha as $heroibatalha)
                                         <tr>
                                             <th>{{$heroibatalha->batalha->batalha}}</th>
                                             <th>{{$heroibatalha->heroi->name}}</th>

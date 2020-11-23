@@ -18,7 +18,10 @@
                             <tbody>                            
                                 <tr>
                                     <td>{{$heroi->identidade->identity ?? "Ultra Secreto" }}</td>                       
-                                    <td>{{$heroi->identidade->image ?? "Ultra Secreto" }}</td>                       
+                                    <td>{{$heroi->identidade->image ?? "Ultra Secreto" }}</td>   
+                                    <td>    
+                                            <a href="{{route('deleteIdentity', $heroi->identidade->id ?? 'Null')}}"><button class="float-right btn btn-outline-danger"><i class="fa fa-bomb fa-lg"></i></button></a>
+                                        </td>                    
                                 </tr> 
                             </tbody>
                         </table>   

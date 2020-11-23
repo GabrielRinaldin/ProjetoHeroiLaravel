@@ -31,6 +31,7 @@
                                             <th>Início</th>
                                             <th>Fim</th>
                                             <th>Herois</th>
+                                            <th>Vilões</th>
                                         </tr>
                                     </thead>
         
@@ -44,6 +45,9 @@
                                             <td>{{$batalha->datafim}}</td>
                                             <td>
                                             <a href="{{route('batalheroi', $batalha->id)}}" ><button class="float-right btn btn-outline-dark"><i class="fa fa-users fa-lg"></i></button></a>
+                                            </td>
+                                            <td>
+                                            <a href="{{route('vilaobatalha', $batalha->id)}}" ><button class="float-right btn btn-outline-dark"><i class="fa fa-users fa-lg"></i></button></a>
                                             </td>
                                         </tr>
                                         @endforeach

@@ -4,5 +4,5 @@
 
 <label class="{{ $class ?? null }}">
     <span>{{ $label ?? $input ?? "ERROR" }}</span>
-    {!! Form::image($input, $value ?? null, $attributes) !!}
+    {!! Form::file($input, $value ?? null, $attributes) !!}
 </label>

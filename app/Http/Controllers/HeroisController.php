@@ -9,11 +9,6 @@ use Illuminate\Support\Facades\Session;
 
 class HeroisController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {   
         $herois = Heroi::get();
@@ -26,62 +21,20 @@ class HeroisController extends Controller
         return view('herois.create');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create(Request $request)
     {
-                $heroi = new Heroi();
-                $heroi = $heroi->create($request->all());
-                Session::flash('mensagem_sucesso', 'Um novo heroi foi incluido ao time!!!');
-                return Redirect::to('heroi');
-
+        $heroi = new Heroi();
+        $heroi = $heroi->create($request->all());
+        Session::flash('mensagem_sucesso', 'Um novo heroi foi incluido ao time!!!');
+        return Redirect::to('heroi');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store()
-    {
-        
-
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Heroi  $heroi
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Heroi $heroi)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Heroi  $heroi
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         $heroi = Heroi::findorFail($id);
         return view('herois.edit', ['heroi' => $heroi]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Heroi  $heroi
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         $heroi = Heroi::findorFail($id);
@@ -89,13 +42,6 @@ class HeroisController extends Controller
         Session::flash('mensagem_sucesso', 'Heroi atualizado com sucesso!');
         return Redirect::to('heroi/');
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Heroi  $heroi
-     * @return \Illuminate\Http\Response
-     */
 
     public function delete($id)
     {  

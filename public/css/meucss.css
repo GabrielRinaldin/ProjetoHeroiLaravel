@@ -2,8 +2,8 @@
 body{
     background-image: linear-gradient(to right top, #ff0000, #ea1a1a, #d42828, #be3131,
      #a63838, #903538, #793236, #632f33, #4b252a, #331b20, #1d1214, #000000);
-     background-repeat: no-repeat;
-     height: 570px;
+     height: max-content;
+     background-repeat: space;
 }
 
 a{
@@ -11,4 +11,8 @@ a{
 }
 a:link{
     text-decoration: none;
+}
+footer
+{
+    height: 210px;
 }
