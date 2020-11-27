@@ -8,10 +8,10 @@
                     <div class="card-header">{{ __('Os herois mais fortes da terra') }}</div>
 
                     <div>   
-                        <h1>Essa não é mais a indetidade secreta do seu Heroi?</h1>
+                        <h1>Quer mesmo tirar esse VILAO do grupo?</h1>
                         <h2>Pense bem, isso não podera ser desfeito!</h2>                          
-                        {!! Form::open(['method' => 'DELETE', 'url' => 'heroi/identity/'.$identidade->id.'/delete', ]) !!}
-                                        <button type="submit" class="float-right">Confirmar exclusão!!!</button>
+                        {!! Form::open(['method' => 'DELETE', 'url' => 'vilao/delete/'.$vilao->id, ]) !!}
+                                        <button type="submit" class="float-right">Não quero mais ele aqui!!!</button>
                         {!! Form::close() !!}
                 </div>
                          

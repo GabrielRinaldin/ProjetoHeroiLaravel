@@ -40,17 +40,32 @@ Route::group(['middleware' => 'web'], function()
     Route::get('heroi/identity/{heroi}/delete', 'App\Http\Controllers\IdentidadesController@delete')->name('deleteIdentity');
     Route::delete('heroi/identity/{heroi}/delete', 'App\Http\Controllers\IdentidadesController@destroy')->name('destroyIdentity');
 
-    /** Rota para crud de ARMAS */
+    /** Rota para crud de ARMAS HEROI */
     Route::get('heroi/arma/{heroi}', 'App\Http\Controllers\ArmasController@index')->name('arma');
     Route::get('heroi/arma/{heroi}/create', 'App\Http\Controllers\ArmasController@new')->name('newArma');
     Route::post('heroi/arma/{heroi}/create', 'App\Http\Controllers\ArmasController@create')->name('createArma');
+    Route::get('heroi/arma/{heroi}/delete', 'App\Http\Controllers\ArmasController@delete')->name('deleteArma');
+    Route::delete('heroi/arma/{heroi}/delete', 'App\Http\Controllers\ArmasController@destroy')->name('destroyArma');
     /** */
 
     /**Rota para crud Vilão */
     Route::get('vilao', 'App\Http\Controllers\ViloesController@index')->name('vilao');
     Route::get('vilao/create', 'App\Http\Controllers\ViloesController@new')->name('newVilao');
     Route::post('vilao/create', 'App\Http\Controllers\ViloesController@create')->name('createVilao');
+    Route::get('vilao/update/{vilao}/', 'App\Http\Controllers\ViloesController@edit')->name('editVilao');
+    Route::patch('vilao/update/{vilao}/', 'App\Http\Controllers\ViloesController@update')->name('updateVilao');
+    Route::post('vilao/update/{vilao}/', 'App\Http\Controllers\ViloesController@update')->name('updateVilao');
+    Route::get('vilao/delete/{vilao}/', 'App\Http\Controllers\ViloesController@delete')->name('deleteVilao');
+    Route::delete('vilao/delete/{vilao}', 'App\Http\Controllers\ViloesController@destroy')->name('destroyVilao');
     /** */
+
+     /** Rota para crud de ARMAS VILÃO */
+     Route::get('vilao/arma/{vilao}', 'App\Http\Controllers\ArmasVilaoController@index')->name('armaVilao');
+     Route::get('vilao/arma/{vilao}/create', 'App\Http\Controllers\ArmasVilaoController@new')->name('newArmaVilao');
+     Route::post('vilao/arma/{vilao}/create', 'App\Http\Controllers\ArmasVilaoController@create')->name('createArmaVilao');
+     Route::get('vilao/arma/{vilao}/delete', 'App\Http\Controllers\ArmasVilaoController@delete')->name('deleteArmaVilao');
+     Route::delete('heroi/arma/{heroi}/delete', 'App\Http\Controllers\ArmasVilaoController@destroy')->name('destroyArmaVilao');
+     /** */
 
     /** Rota para crud batalha */
     Route::get('batalha', 'App\Http\Controllers\BatalhasController@index')->name('batalha');
@@ -69,5 +84,6 @@ Route::group(['middleware' => 'web'], function()
     Route::get('batalha/{batalha}/vilao/create', 'App\Http\Controllers\ViloesController@new')->name('newVilaoBatalha');
     Route::post('batalha/{batalha}/vilao/create', 'App\Http\Controllers\ViloesController@create')->name('createVilaoBatalha');
     /** */
+
 });
 

@@ -3,6 +3,9 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Seeder\Session;
+use Illuminate\Database\Eloquent\Model;
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,6 +16,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        Session::create([
+            'user_id' => 1,
+            'entrada' => '10:12:10',
+            'saida' => '10:12:10',
+        ]);
     }
 }

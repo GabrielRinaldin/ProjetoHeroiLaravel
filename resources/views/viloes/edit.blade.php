@@ -8,8 +8,8 @@
                     <div class="card-header">{{ __('Insira os dados abaixo') }}</div>
                         <div>
                             <div>
-                                {!! Form::model($heroi, ['method' => 'PATCH', 'url' => 'heroi/update/'.$heroi->id ])!!}
-                                {!! Form::open(['route' => 'update', 'url' => 'heroi/update/'.$heroi->id, 'enctype'=>'multpart/form-data'])!!}
+                                {!! Form::model($vilao, ['method' => 'PATCH', 'url' => 'vilao/update/'.$vilao->id ])!!}
+                                {!! Form::open(['route' => 'updateVilao', 'url' => 'vilao/update/'.$vilao->id])!!}
                                 @include('templates.formulario.input', ['input' => 'name', 'attributes' => ['placeholder' => 'Nome']])
                                 @include('templates.formulario.input', ['input' => 'levelpower', 'attributes' => ['placeholder' => 'Nivel de Poder']])
                                 @include('templates.formulario.input', ['input' => 'heigth', 'attributes' => ['placeholder' => 'Altura']])
