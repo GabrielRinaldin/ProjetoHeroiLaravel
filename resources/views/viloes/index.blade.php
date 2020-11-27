@@ -47,13 +47,13 @@
                                         <td>{{$vilao->weigth}}</td>
                                         <td>{{$vilao->status}}</td>
                                         <td>
-                                            <a href=""><button class="float-right btn btn-outline-primary"><i class="fa fa-cogs fa-lg"></i></button></a>
+                                            <a href="{{route('armaVilao', $vilao->id )}}"><button class="float-right btn btn-outline-primary"><i class="fa fa-cogs fa-lg"></i></button></a>
                                         </td>
                                         <td>    
-                                            <a href=""><button class="float-right btn btn-outline-secondary"><i class="fa fa-edit fa-lg"></i></button></a>
+                                            <a href="{{route('editVilao', $vilao->id )}}"><button class="float-right btn btn-outline-secondary"><i class="fa fa-edit fa-lg"></i></button></a>
                                         </td>
                                         <td>    
-                                            <a href=""><button class="float-right btn btn-outline-danger"><i class="fa fa-bomb fa-lg"></i></button></a>
+                                            <a href="{{route('deleteVilao', $vilao->id )}}"><button class="float-right btn btn-outline-danger"><i class="fa fa-bomb fa-lg"></i></button></a>
                                         </td>
                                         @endforeach
                                            

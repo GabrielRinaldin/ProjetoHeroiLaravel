@@ -19,14 +19,14 @@ class IdentidadesController extends Controller
             $identidade = Identidade::all();
             $heroi = Heroi::find($id);
     
-            return view('identidades.index', ['identidade' => $identidade, 'heroi' => $heroi]);
+            return view('herois.identidades.index', ['identidade' => $identidade, 'heroi' => $heroi]);
     }
 
 
     public function new($id)
     {
         $heroi = Heroi::find($id);
-        return view('identidades.createIdentity', ['heroi' => $heroi]);
+        return view('herois.identidades.createIdentity', ['heroi' => $heroi]);
     }
 
     public function create(Request $request, $heroi)
@@ -37,33 +37,18 @@ class IdentidadesController extends Controller
                 return Redirect::to('heroi/identity/'.$heroi);
     }
 
-
-    public function edit($id)
-    {
-       #$identidade = Identidade::findorFail($id);
-       #return view('identidades.edit', ['identidade' => $identidade]);
-    }
-
-    public function update(Request $request, $id)
-    {
-        #$identidade = Identidade::findorFail($id);
-        #$identidade->update($request->all());
-        #Session::flash('mensagem_sucesso', 'Identidade atualizada com sucesso!');
-        #return Redirect::to('identidade/');
-    }
-
     public function delete($id)
     {  
         $identidade = Identidade::findorFail($id);
-        return view('identidades.deleteIdentity', ['identidade' => $identidade]);
+        return view('herois.identidades.deleteIdentity', ['identidade' => $identidade]);
     }
 
     public function destroy($id)
     {
        $identidade = Identidade::findorFail($id);
        $identidade->delete();
-       Session::flash('mensagem_sucesso', 'Heroi excluido com sucesso!');
-       return Redirect::to('identidade/');
+       Session::flash('mensagem_sucesso', 'Identidade excluida com sucesso!');
+       return Redirect::to('heroi/');
 
     }
 }

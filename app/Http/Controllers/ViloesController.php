@@ -33,14 +33,31 @@ class ViloesController extends Controller
         
         
     }
-    
-    public function update(Request $request, Viloes $viloes)
+    public function edit($id)
     {
-        //
+        $vilao = Vilao::findorFail($id);
+        return view('viloes.edit', ['vilao' => $vilao]);
+    }
+    
+    public function update(Request $request, $id)
+    {
+        $vilao = Vilao::findorFail($id);
+        $vilao->update($request->all());
+        Session::flash('mensagem_sucesso', 'Vilão atualizado com sucesso!');
+        return Redirect::to('vilao');
     }
 
-    public function destroy(Viloes $viloes)
+    public function delete($id)
     {
-        //
+        $vilao = Vilao::findorFail($id);
+        return view('viloes.delete', ['vilao' => $vilao]);
+    }
+
+    public function destroy($id)
+    {
+        $vilao = Vilao::findorFail($id);
+        $vilao = $vilao->delete();
+        Session::flash('mensagem_sucesso', 'Vilão excluido com sucesso!');
+        return Redirect::to('vilao/');
     }
 }

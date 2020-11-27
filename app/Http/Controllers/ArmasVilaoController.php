@@ -2,32 +2,32 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Arma;
-use App\Models\Heroi;
+use App\Models\ArmasVilao;
+use App\Models\Vilao;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 
-class ArmasController extends Controller
+class ArmasVilaoController extends Controller
 {
     public function index($id)
     {    
-        $arma = Arma::all();
-        $heroi = Heroi::find($id);
-        return view('herois.armas.index', ['arma' => $arma, 'heroi' => $heroi]);
+        $armavilao = ArmasVilao::all();
+        $vilao = Vilao::find($id);
+        return view('viloes.armas.index', ['armavilao' => $armavilao, 'vilao' => $vilao]);
     }
 
      public function new($id)
      {
-         $heroi = Heroi::find($id);
-         return view('herois.armas.createArma', ['heroi' => $heroi]);
+         $vilao = Vilao::find($id);
+         return view('viloes.armas.createArmaVilao', ['vilao' => $vilao]);
      }
     public function create(Request $request, $heroi)
     {
-        $arma = new Arma();
-        $arma = $arma->create($request->all());
+        $armavilao = new ArmasVilao();
+        $armavilao = $armavilao->create($request->all());
         Session::flash('mensagem_sucesso', 'Uma nova identidade foi atribuidada ao seu heroi!!!');
-        return Redirect::to('heroi/arma/'.$heroi);
+        return Redirect::to('vilao/arma/'.$vilao);
     }
 
     public function delete($id)
